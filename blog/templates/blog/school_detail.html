@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2>{{ school.school_name }}</h2>
+          <ol>
+            <li><a href="index.html">Αρχική</a></li>
+            <li>{{ school.school_name }}</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container" data-aos="fade-up">
+        <div class="portfolio-details-container">
+
+          <div class="owl-carousel portfolio-details-carousel">
+            <img src="{{ school.image2.url}}" style="width:950px;height:550px;" class="img-fluid" alt="">
+            <img src="{{ school.image3.url}}" style="width:950px;height:550px;" class="img-fluid" alt="">
+          </div>
+
+          <div class="portfolio-info">
+            <h3 >Πληροφορίες</h3>
+            <ul>
+              <li><strong>Κατηγορία</strong>: {{ school.category}}</li>
+              <li><strong>Ιδιοκτήτης</strong>: {{ school.owner}}</li>
+              <li><strong>Διεύθυνση / Περιοχή</strong>: {{ school.address}} / {{ school.region}}</li>
+              <li><strong>Επικοινωνία</strong>: {{ school.telephone}} / {{ school.email}}</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="portfolio-description">
+          <h2>Καλωσήρθατε στο κέντρο εκπαίδευσης "{{ school.school_name}}"</h2>
+          <p>
+            {{ school.text}}
+          </p>
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+{% endblock %}
